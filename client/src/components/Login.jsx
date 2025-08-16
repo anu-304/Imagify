@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/AppContext'
+import { motion } from 'framer-motion'
 
 const Login = () => {
 
@@ -26,7 +27,12 @@ const Login = () => {
     bottom-0 z-20 backdrop-blur-sm bg-black/30 flex 
     justify-center items-center'>
 
-        <form className='relative bg-white p-10 rounded-xl
+        <motion.form 
+        initial={{ opacity: 0.2, y: 50 }}
+        transition={{ duration: 0.3 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className='relative bg-white p-10 rounded-xl
         text-slate-500'>
             <h1 className='text-center text-2xl text-neutral-700
             font-medium'>{state}</h1>
@@ -75,7 +81,7 @@ const Login = () => {
             src={assets.cross_icon} alt="" className='absolute
             top-5 right-5 cursor-pointer' />
 
-        </form>
+        </motion.form>
 
     </div>
   )
