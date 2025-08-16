@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 
@@ -8,6 +8,7 @@ import Result from './pages/Result'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './components/Login'
+import { AppContext } from './context/AppContext'
 
 const App = () => {
 
